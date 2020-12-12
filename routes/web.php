@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::get('/phone/{id}', [UserController::class, 'fetchPhoneByUser']);
 Route::get('/add-post', [PostController::class, 'addPost']);
 Route::get('/add-comment/{id}', [PostController::class, 'addComment']);
 Route::get('/comments/{id}', [PostController::class, 'getCommentByPost']);
+
+Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);    
+Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
+Route::get('/export-csv', [EmployeeController::class, 'exportIntoCsv']);
+
