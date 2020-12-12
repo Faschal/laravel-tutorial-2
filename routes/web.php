@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,5 @@ Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);
 Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
 Route::get('/export-csv', [EmployeeController::class, 'exportIntoCsv']);
 
+Route::get('/get-employee', [EmpController::class, 'getAllEmployees']);
+Route::get('/export-pdf', [EmpController::class, 'downloadPDF']);
