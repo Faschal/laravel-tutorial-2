@@ -12,6 +12,8 @@ class Employee extends Model
 
     protected $table = "employees";
 
+    protected $fillable = ['name', 'email', 'phone', 'salary', 'departement'];
+
     public static function getEmployees()
     {
         $records = DB::table('employees')->select('id','name','email','phone','salary','departement')->get()->toArray();

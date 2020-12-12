@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Exports\EmployeeExport;
 use Excel;
+use App\Imports\EmployeeImport;
 
 class EmployeeController extends Controller
 {
@@ -32,5 +33,16 @@ class EmployeeController extends Controller
     public function exportIntoCsv()
     {
         return Excel::download(new EmployeeExport, 'employeelist.csv');
+    }
+
+    public function showImportForm()
+    {
+        return view('import-form');
+    }
+
+    public function importForm(Request $request)
+    {
+        Excel::import(new EmployeeImport, $request->file);
+        return "Record are imported successfully";
     }
 }
