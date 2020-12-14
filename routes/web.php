@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\DropZoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,7 @@ Route::get('/import-form', [EmployeeController::class, 'showImportForm']);
 Route::post('/import-form', [EmployeeController::class, 'importForm'])->name('employee.import');
 
 Route::get('/resize-image', [ImageController::class, 'showResizeImage']);
-Route::post('resize-image', [ImageController::class, 'resizeImage'])->name('image.resize');
+Route::post('/resize-image', [ImageController::class, 'resizeImage'])->name('image.resize');
+
+Route::get('/dropzone', [DropZoneController::class, 'dZone']);
+Route::post('/dropzone', [DropZoneController::class, 'dzoneStore'])->name('image.dzone');
