@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\DropZoneController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,5 @@ Route::post('/resize-image', [ImageController::class, 'resizeImage'])->name('ima
 
 Route::get('/dropzone', [DropZoneController::class, 'dZone']);
 Route::post('/dropzone', [DropZoneController::class, 'dzoneStore'])->name('image.dzone');
+
+Route::get('/gallery', [GalleryController::class, 'showGallery']);
