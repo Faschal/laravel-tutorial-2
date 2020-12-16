@@ -28,6 +28,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
   <script src="https://cdn.tiny.cloud/1/m467a5mz7m0qod31oukt0l5v08aquv1sty719en9gdcwk3gz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://pagecdn.io/lib/toastr/2.1.4/toastr.min.js" crossorigin="anonymous" integrity="sha256-Hgwq1OBpJ276HUP9H3VJkSv9ZCGRGQN+JldPJ8pNcUM=" ></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     tinymce.init({
       selector: 'textarea'
@@ -57,6 +58,14 @@
   @if (Session::has('student_added'))
       <script>
         toastr.success("{!! Session::get('student_added') !!}");
+      </script>
+  @endif
+
+  @if (Session::has('student_added'))
+      <script>
+        swal("Added Success", "{!! Session::get('student_added') !!}", "success", {
+          button: "OK",
+        });
       </script>
   @endif
 </body>
