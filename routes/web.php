@@ -9,6 +9,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\DropZoneController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,11 @@ Route::post('/dropzone', [DropZoneController::class, 'dzoneStore'])->name('image
 Route::get('/gallery', [GalleryController::class, 'showGallery']);
 
 Route::get('/editor', [EditorController::class, 'showEditor']);
+
+Route::get('/add-student', [StudentController::class, 'showAddStudent']);
+Route::post('/add-student', [StudentController::class, 'addStudent'])->name('student.add');
+
+Route::get('/all-students', [StudentController::class, 'showStudents']);
+Route::get('/edit-student/{id}', [StudentController::class, 'showEditStudent']);
+Route::post('/update-student', [StudentController::class, 'editStudent'])->name('student.update');
+Route::delete('/delete-student/{id}', [StudentController::class, 'deleteStudent'])->name('student.delete');
