@@ -8,6 +8,7 @@ use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\DropZoneController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\EditorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,5 @@ Route::get('/dropzone', [DropZoneController::class, 'dZone']);
 Route::post('/dropzone', [DropZoneController::class, 'dzoneStore'])->name('image.dzone');
 
 Route::get('/gallery', [GalleryController::class, 'showGallery']);
+
+Route::get('/editor', [EditorController::class, 'showEditor']);

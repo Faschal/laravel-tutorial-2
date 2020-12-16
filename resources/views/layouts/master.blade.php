@@ -24,6 +24,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script src="https://pagecdn.io/lib/enyo-dropzone/v5.7.2/min/dropzone.min.js" crossorigin="anonymous"  ></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/m467a5mz7m0qod31oukt0l5v08aquv1sty719en9gdcwk3gz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: 'textarea'
+   });
+  </script>
   <script>
     $(document).ready(function() {
       $('img').lazyload();
