@@ -7,6 +7,7 @@ use App\Models\Employee;
 use App\Exports\EmployeeExport;
 use Excel;
 use App\Imports\EmployeeImport;
+use App\DataTables\EmployeeDataTable;
 
 class EmployeeController extends Controller
 {
@@ -44,5 +45,10 @@ class EmployeeController extends Controller
     {
         Excel::import(new EmployeeImport, $request->file);
         return "Record are imported successfully";
+    }
+
+    public function index(EmployeeDataTable $dataTable)
+    {
+        return $dataTable->render('employees');
     }
 }
