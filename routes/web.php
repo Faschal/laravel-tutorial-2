@@ -13,6 +13,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TestHelperController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ZipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +73,5 @@ Route::get('test-helper', [TestHelperController::class, 'getFirstLastName']);
 Route::get('/add-product', [ProductController::class, 'addProduct']);
 Route::get('/search', [ProductController::class, 'showSearchProduct']);
 Route::get('/autosearch', [ProductController::class, 'autocomplete'])->name('search.autocomplete');
+
+Route::get('/zip', [ZipController::class,'zipFile']);
