@@ -29,6 +29,7 @@
   <script src="https://cdn.tiny.cloud/1/m467a5mz7m0qod31oukt0l5v08aquv1sty719en9gdcwk3gz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://pagecdn.io/lib/toastr/2.1.4/toastr.min.js" crossorigin="anonymous" integrity="sha256-Hgwq1OBpJ276HUP9H3VJkSv9ZCGRGQN+JldPJ8pNcUM=" ></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" integrity="sha512-HWlJyU4ut5HkEj0QsK/IxBCY55n5ZpskyjVlAoV9Z7XQwwkqXoYdCIC93/htL3Gu5H3R4an/S0h2NXfbZk3g7w==" crossorigin="anonymous"></script>
   {{-- <script>
     tinymce.init({
       selector: 'textarea'
@@ -68,5 +69,17 @@
         });
       </script>
   @endif
+
+  <script>
+    var path = "{{ route('search.autocomplete') }}";
+
+    $('input.typeahead').typeahead({
+      source: function(terms, process){
+        return $.get(path,{terms:terms}, function(data){
+          return process(data);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
