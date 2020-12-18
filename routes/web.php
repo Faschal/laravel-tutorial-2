@@ -10,6 +10,7 @@ use App\Http\Controllers\DropZoneController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,6 @@ Route::get('/all-students', [StudentController::class, 'showStudents']);
 Route::get('/edit-student/{id}', [StudentController::class, 'showEditStudent']);
 Route::post('/update-student', [StudentController::class, 'editStudent'])->name('student.update');
 Route::delete('/delete-student/{id}', [StudentController::class, 'deleteStudent'])->name('student.delete');
+
+Route::get('/contact-us', [ContactController::class,'showContact']);
+Route::post('/send-msg', [ContactController::class, 'sendEmail'])->name('contact.send');
