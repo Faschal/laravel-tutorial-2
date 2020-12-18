@@ -11,6 +11,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TestHelperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,5 @@ Route::delete('/delete-student/{id}', [StudentController::class, 'deleteStudent'
 
 Route::get('/contact-us', [ContactController::class,'showContact']);
 Route::post('/send-msg', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+Route::get('test-helper', [TestHelperController::class, 'getFirstLastName']);
